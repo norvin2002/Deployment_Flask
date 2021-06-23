@@ -11,8 +11,18 @@ def index():
     return "Hello world!"
 
 # this is our API endpoint
-@app.route("/predict")
+# this is actually a get endpoint where user can deliver payload information to
+@app.route("/predict", methods = ['GET'])
 def predict():
-    return "The API works"
+    # take the API payload as JSON format
+    json_ = request.json
+    df = pd.read_json(json_)
+
+    prediction = forest.predict(df)
+
+    # turn the prediction from np array into a proper list
+    # pack the list into a dictionary
+
+    return {"prediction" : list(prediction)}
 
 app.run()
