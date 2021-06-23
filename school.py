@@ -25,6 +25,9 @@ def predict():
 
     return {"prediction" : list(prediction)}
 
+#app.run() -- if running from local microserver
+
+# if deployed to Heroku:
 if __name__ == '__main__':
     app.run()
 
