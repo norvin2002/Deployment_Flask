@@ -8,7 +8,7 @@ forest = joblib.load("forest_v1.joblib")
 
 @app.route("/")
 def index():
-    return "Hello world!"
+    return "Welcome to trial for Flask Deployment!"
 
 # this is our API endpoint
 # this is actually a get endpoint where user can deliver payload information to
